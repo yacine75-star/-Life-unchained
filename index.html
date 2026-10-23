@@ -245,7 +245,7 @@ function openNearbyShop(){
 }
 document.getElementById('interact').addEventListener('pointerdown',e=>{e.preventDefault();openNearbyShop();});
 document.getElementById('closeShop').addEventListener('pointerdown',e=>{e.preventDefault();document.getElementById('shopPanel').style.display='none';});
-function updateStats(){document.getElementById('energy').textContent=Math.max(0,Math.round(energy));document.getElementById('rep').textContent=rep;document.getElementById('enemyHealth').textContent=Math.max(0,Math.round(enemy.userData.health));}
+function updateStats(){document.getElementById('energy').textContent=Math.max(0,Math.round(energy));document.getElementById('rep').textContent=rep;const eh=document.getElementById('enemyHealth');if(eh)eh.textContent=Math.max(0,Math.round(enemy.userData.health));}
 function distance(a,b){return a.position.distanceTo(b.position);}
 function face(from,to){const dx=to.position.x-from.position.x,dz=to.position.z-from.position.z;from.rotation.y=Math.atan2(dx,dz);}
 function punch(){
